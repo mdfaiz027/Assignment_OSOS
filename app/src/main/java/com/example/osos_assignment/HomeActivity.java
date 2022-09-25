@@ -97,7 +97,7 @@ public class HomeActivity extends AppCompatActivity /*implements OnMapReadyCallb
 
         recyclerAdapter = new MyRecyclerAdapter(this, arrayList);
         recyclerView.setAdapter(recyclerAdapter);
-        
+
         SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         supportMapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
