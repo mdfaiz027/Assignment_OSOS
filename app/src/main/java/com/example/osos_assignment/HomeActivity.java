@@ -82,6 +82,9 @@ public class HomeActivity extends AppCompatActivity /*implements OnMapReadyCallb
                         String lat = arrayMultipleObjectModel.getAddressObject().getGeoObject().getLat();
                         String lng = arrayMultipleObjectModel.getAddressObject().getGeoObject().getLng();
 
+                        latitude = Double.parseDouble(lat);
+                        longitude = Double.parseDouble(lng);
+
                         myModel = new MyModel(""+name, ""+username, ""+email, ""+street, ""+city, ""+zipcode);
                         arrayList.add(myModel);
                         recyclerAdapter.notifyDataSetChanged();
@@ -102,10 +105,8 @@ public class HomeActivity extends AppCompatActivity /*implements OnMapReadyCallb
         supportMapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(@NonNull GoogleMap googleMap) {
-                map = googleMap;
 
-                latitude = 17.387140;
-                longitude = 78.491684;
+                map = googleMap;
 
                 LatLng latlng = new LatLng(latitude, longitude);
                 MarkerOptions markerOptions = new MarkerOptions().position(latlng);
